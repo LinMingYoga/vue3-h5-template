@@ -3,22 +3,28 @@
     <div class="logo" @click="routeToDetails">
       <img alt="Vue logo" src="../../assets/11.jpg" />
     </div>
-    <h3>打工人</h3>
+    <h3>{{username}}</h3>
   </div>
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import {defineComponent, computed} from 'vue'
 import { useRouter } from 'vue-router';
+import { useStore, mapGetters } from 'vuex'
 export default defineComponent({
-  setup(props) {
-     const router = useRouter();
+  setup() {
+    const store = useStore()
+    const router = useRouter();
     const routeToDetails = () => {
       router.push("/details")
     }
 
+    let getter = mapGetters(['userName'])
+    let username = computed(getter.userName.bind({ $store: store }))
+
     return {
-      routeToDetails
+      routeToDetails,
+      username
     }
   }
 })

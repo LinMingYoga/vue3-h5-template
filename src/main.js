@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./router";
 import store from "./store";
-import './styles/index.scss'
+import './styles/index.scss' // 引入全局css
 
 import 'lib-flexible/flexible' // 适配大屏方案
 

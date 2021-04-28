@@ -39,7 +39,6 @@ export default defineComponent({
     flex-direction: column;
     justify-content: center;
     .title {
-      width: 100%;
       background-color: #fff;
       border: 1px solid #ddd;
       h3 {
